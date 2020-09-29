@@ -112,12 +112,8 @@ class VideoViewController: UIViewController, CKFSessionDelegate {
         }
     }
     
-    @IBOutlet weak var panelView: UIVisualEffectView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.panelView.transform = CGAffineTransform(translationX: 0, y: self.panelView.frame.height + 5)
-        self.panelView.isUserInteractionEnabled = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -128,22 +124,6 @@ class VideoViewController: UIViewController, CKFSessionDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.previewView.session?.stop()
-    }
-    
-    @IBAction func handleSwipeDown(_ sender: Any) {
-        self.panelView.isUserInteractionEnabled = false
-        self.captureButton.isUserInteractionEnabled = true
-        UIView.animate(withDuration: 0.2) {
-            self.panelView.transform = CGAffineTransform(translationX: 0, y: self.panelView.frame.height)
-        }
-    }
-    
-    @IBAction func handleSwipeUp(_ sender: Any) {
-        self.panelView.isUserInteractionEnabled = true
-        self.captureButton.isUserInteractionEnabled = false
-        UIView.animate(withDuration: 0.2) {
-            self.panelView.transform = CGAffineTransform(translationX: 0, y: 0)
-        }
     }
     
     @IBAction func handleCapture(_ sender: UIButton) {
