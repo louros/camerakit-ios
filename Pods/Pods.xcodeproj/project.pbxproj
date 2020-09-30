@@ -1,0 +1,875 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		026BDA015F4B08A5BF79A26CAF9B23D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		05241A317DE089D8B9E44AD6882A349C /* DimensionAttribute+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B335BA77F06E0429082C2224DCFFF35 /* DimensionAttribute+AppKit.swift */; };
+		0CAF18D9DD346362ED6C7C0184A3356B /* PositionAttribute+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59DBCF8549850D135D63CCAAB274C6 /* PositionAttribute+UIKit.swift */; };
+		0EE27DF164EF75F563C138ECE2BDEE73 /* PositionAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB802AEF92A862E3275C2EC161DD7E4 /* PositionAttribute.swift */; };
+		118822FF2260F7E332050628C34E6C7B /* Item+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF4E3E0AACFC0B924EE499A690CEEDC /* Item+AppKit.swift */; };
+		11A9B9F06C0F19E7BE88B4C1C93E01C0 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBCC29EBF45B36C0AB846E793330A0 /* Context.swift */; };
+		16335A3B4153380EC4BBAF4AF40D02AB /* ScrollableSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B95B6DDCE446715A1620F772E4B227 /* ScrollableSegmentedControl-dummy.m */; };
+		17B9EFF9B766C5651DC7DD2DDD95DCAC /* PositionAttribute+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355A8B504D8DD75345C88F2F3CF3DB10 /* PositionAttribute+AppKit.swift */; };
+		196E2B936CD23F3563DEFB642153E2B7 /* Pods-CameraKitDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3A2F0A37BE3A486263EF3FEA5FF530 /* Pods-CameraKitDemo-dummy.m */; };
+		1B18198448992B9F8FE4135004654CB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		1E2EF38A0AD3CD5330B348D36E2CE146 /* DimensionAttribute+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF625490E219703794064752F55F7C /* DimensionAttribute+UIKit.swift */; };
+		2768AB5014345D3F9593C9351CE34CD2 /* NSView+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6186386840E64528858A53400A389C6 /* NSView+Easy.swift */; };
+		2BC3CCFDF96E2FE053D2B7BAA3841710 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07FF9C57DF6CCA17DFE5FC9A61F28F6 /* Priority.swift */; };
+		3335EB2DACFAE3A31573EA7CE9F69FCB /* ScrollableSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B67A52219391E95C37B7700DA192D04 /* ScrollableSegmentedControl.swift */; };
+		36C53A6C4AD28C05B1AE198F11D13505 /* UILayoutGuide+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03CB154033746538576A5FFFF41686 /* UILayoutGuide+Easy.swift */; };
+		4F792F05DE907B7C42EC4E8937CD373B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C50771681E2E18FAB65CA656FE426EB /* Constant.swift */; };
+		5E8A57CC72ACA5965EB559730E8F19C6 /* NSLayoutGuide+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8809DECE18CC8CBDF9D1E04698200929 /* NSLayoutGuide+Easy.swift */; };
+		6C4A2DEB12FE1597C582EF51C8652AFB /* ReferenceAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692FC94EBB752B01C779C36B39E9C9B4 /* ReferenceAttribute.swift */; };
+		70ACAC891FBFE237C71E97CEE9A49BEA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2073F5F5AF58CB497FFFFD389E377FC /* Item.swift */; };
+		743D938D8CF868161152217E69B389D7 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DBA90EC60CB4048583869327D95BBB /* Attribute.swift */; };
+		8720188B4F1832E79DB3F048D3529DE9 /* Item+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B07BCCD7B8784F092B4F5602B4894A /* Item+UIKit.swift */; };
+		87E324053D8BEE1277EB13746BEAD2DE /* ScrollableSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 090C83B838BFB2613B2ED887B61775B2 /* ScrollableSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		889D8FC8748D3F97E608E93395D632AD /* EasyPeasy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B07D5CB0859A1F536DFC0C627D2804 /* EasyPeasy-dummy.m */; };
+		8CF0B3933E17A032CFE7A755DB9B1414 /* EasyPeasy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A989584BA63F86C6B4A359CF110A5A0 /* EasyPeasy-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D080A3F8645ABABCCFAD8C4400EF1F2 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F925AE1BCCF9EA903250E0636235EC3 /* Node.swift */; };
+		94BD05C42A3EE07CEA2E3E3F149791A6 /* CompoundAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D2B85A2B36273D8FF24E69DA29F19 /* CompoundAttribute.swift */; };
+		9ACC2CF9EB4B33D7927A5E49B4FE4110 /* Pods-CameraKitDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EFA8DB861EECA80C1D9B0298189CD7 /* Pods-CameraKitDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F414578FFB52875E39CF20AEC7A6904 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		A8D94CEDD3759E2B400034FA2C0E1016 /* Collection+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBE4F179D8D4D6A7821F813C17A551 /* Collection+Easy.swift */; };
+		BA5063CFF5E3AD341C93423AE833F2B1 /* UIView+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E4155A07CB60D9EC6C09C44267D459 /* UIView+Easy.swift */; };
+		BB65461947EC1DAEC1477447EC650DA7 /* EasyPeasy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2407E088CDBCA99FBDB8415C47D2D7 /* EasyPeasy.swift */; };
+		D5ACFFF642B863656B01CA75701BFCBF /* DimensionAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6640D7C03123DDD390D82541EE35E58C /* DimensionAttribute.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D437F528273EDA7683A1837AAC66C89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EF03FFDDD4B9017D2CBE7F1C431A022;
+			remoteInfo = ScrollableSegmentedControl;
+		};
+		C8A91ED552714E6DAAF86672CEBC486D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AB385395597735698BB9CE5CEFC0EC3;
+			remoteInfo = EasyPeasy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		090C83B838BFB2613B2ED887B61775B2 /* ScrollableSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollableSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
+		0A91481B47A6DD4ABF44B31305803E56 /* Pods-CameraKitDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CameraKitDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0B67A52219391E95C37B7700DA192D04 /* ScrollableSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollableSegmentedControl.swift; path = ScrollableSegmentedControl/ScrollableSegmentedControl.swift; sourceTree = "<group>"; };
+		0D3A2F0A37BE3A486263EF3FEA5FF530 /* Pods-CameraKitDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CameraKitDemo-dummy.m"; sourceTree = "<group>"; };
+		11DBE4F179D8D4D6A7821F813C17A551 /* Collection+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Collection+Easy.swift"; path = "EasyPeasy/Collection+Easy.swift"; sourceTree = "<group>"; };
+		14A92ED31007EF4E293CD5033ACC5556 /* EasyPeasy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EasyPeasy.modulemap; sourceTree = "<group>"; };
+		1758F0C8C39A16EBB214DBD2790535A1 /* ScrollableSegmentedControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ScrollableSegmentedControl-Info.plist"; sourceTree = "<group>"; };
+		1ABB6C3742B77A158E95B694F020F42E /* Pods-CameraKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CameraKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2303522E51436963B147F09D12D1F40F /* Pods-CameraKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CameraKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2748BCA90D1EFD810E43B2008D67BCBF /* ScrollableSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ScrollableSegmentedControl.framework; path = ScrollableSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C788A08CA29022819898CBA46B8941E /* ScrollableSegmentedControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScrollableSegmentedControl.release.xcconfig; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		33983BF72900EBB0BB4878F9FBD7C5D8 /* Pods-CameraKitDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CameraKitDemo-frameworks.sh"; sourceTree = "<group>"; };
+		355A8B504D8DD75345C88F2F3CF3DB10 /* PositionAttribute+AppKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PositionAttribute+AppKit.swift"; path = "EasyPeasy/PositionAttribute+AppKit.swift"; sourceTree = "<group>"; };
+		3B335BA77F06E0429082C2224DCFFF35 /* DimensionAttribute+AppKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DimensionAttribute+AppKit.swift"; path = "EasyPeasy/DimensionAttribute+AppKit.swift"; sourceTree = "<group>"; };
+		3C386A3124F5442C4D295CE98C6D4184 /* ScrollableSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ScrollableSegmentedControl.modulemap; sourceTree = "<group>"; };
+		3EB802AEF92A862E3275C2EC161DD7E4 /* PositionAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PositionAttribute.swift; path = EasyPeasy/PositionAttribute.swift; sourceTree = "<group>"; };
+		4C50771681E2E18FAB65CA656FE426EB /* Constant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = EasyPeasy/Constant.swift; sourceTree = "<group>"; };
+		4F925AE1BCCF9EA903250E0636235EC3 /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Node.swift; path = EasyPeasy/Node.swift; sourceTree = "<group>"; };
+		54B07BCCD7B8784F092B4F5602B4894A /* Item+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Item+UIKit.swift"; path = "EasyPeasy/Item+UIKit.swift"; sourceTree = "<group>"; };
+		583EEA7E019E48F2242A8FC17D180BFF /* EasyPeasy-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPeasy-prefix.pch"; sourceTree = "<group>"; };
+		58B07D5CB0859A1F536DFC0C627D2804 /* EasyPeasy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EasyPeasy-dummy.m"; sourceTree = "<group>"; };
+		62BF625490E219703794064752F55F7C /* DimensionAttribute+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DimensionAttribute+UIKit.swift"; path = "EasyPeasy/DimensionAttribute+UIKit.swift"; sourceTree = "<group>"; };
+		62E4155A07CB60D9EC6C09C44267D459 /* UIView+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Easy.swift"; path = "EasyPeasy/UIView+Easy.swift"; sourceTree = "<group>"; };
+		6640D7C03123DDD390D82541EE35E58C /* DimensionAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DimensionAttribute.swift; path = EasyPeasy/DimensionAttribute.swift; sourceTree = "<group>"; };
+		692FC94EBB752B01C779C36B39E9C9B4 /* ReferenceAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReferenceAttribute.swift; path = EasyPeasy/ReferenceAttribute.swift; sourceTree = "<group>"; };
+		7B03CB154033746538576A5FFFF41686 /* UILayoutGuide+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutGuide+Easy.swift"; path = "EasyPeasy/UILayoutGuide+Easy.swift"; sourceTree = "<group>"; };
+		8328E6FCAC1E4D4E635FEAE69D63A19E /* EasyPeasy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EasyPeasy.framework; path = EasyPeasy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8809DECE18CC8CBDF9D1E04698200929 /* NSLayoutGuide+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutGuide+Easy.swift"; path = "EasyPeasy/NSLayoutGuide+Easy.swift"; sourceTree = "<group>"; };
+		8A989584BA63F86C6B4A359CF110A5A0 /* EasyPeasy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPeasy-umbrella.h"; sourceTree = "<group>"; };
+		98B95B6DDCE446715A1620F772E4B227 /* ScrollableSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ScrollableSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		9A4BC56337B3621F0F541E3B77AE346C /* EasyPeasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyPeasy.release.xcconfig; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F6D2B85A2B36273D8FF24E69DA29F19 /* CompoundAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompoundAttribute.swift; path = EasyPeasy/CompoundAttribute.swift; sourceTree = "<group>"; };
+		B52F571665B5F1CAC868B6A9E3220340 /* EasyPeasy-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EasyPeasy-Info.plist"; sourceTree = "<group>"; };
+		B5EFA8DB861EECA80C1D9B0298189CD7 /* Pods-CameraKitDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CameraKitDemo-umbrella.h"; sourceTree = "<group>"; };
+		B6186386840E64528858A53400A389C6 /* NSView+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSView+Easy.swift"; path = "EasyPeasy/NSView+Easy.swift"; sourceTree = "<group>"; };
+		B96451EAFA197B1FE182D3AAFDB6B36F /* Pods-CameraKitDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CameraKitDemo.modulemap"; sourceTree = "<group>"; };
+		C593F02169EEA6290F7170364B934ED9 /* Pods-CameraKitDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CameraKitDemo-Info.plist"; sourceTree = "<group>"; };
+		CFF4E3E0AACFC0B924EE499A690CEEDC /* Item+AppKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Item+AppKit.swift"; path = "EasyPeasy/Item+AppKit.swift"; sourceTree = "<group>"; };
+		D07FF9C57DF6CCA17DFE5FC9A61F28F6 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = EasyPeasy/Priority.swift; sourceTree = "<group>"; };
+		D20355D74BBABEFD5C7309CE21388ED7 /* Pods_CameraKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CameraKitDemo.framework; path = "Pods-CameraKitDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4DBA90EC60CB4048583869327D95BBB /* Attribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Attribute.swift; path = EasyPeasy/Attribute.swift; sourceTree = "<group>"; };
+		DE34218EB863C1223D5ADEB92BF45ECF /* ScrollableSegmentedControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScrollableSegmentedControl.debug.xcconfig; sourceTree = "<group>"; };
+		E2073F5F5AF58CB497FFFFD389E377FC /* Item.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Item.swift; path = EasyPeasy/Item.swift; sourceTree = "<group>"; };
+		E26E2509E4D3357A276AF03D6CC653A6 /* EasyPeasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyPeasy.debug.xcconfig; sourceTree = "<group>"; };
+		E28B0A0697354902CB443488B2B538DB /* ScrollableSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollableSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
+		E9DBCC29EBF45B36C0AB846E793330A0 /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = EasyPeasy/Context.swift; sourceTree = "<group>"; };
+		FC2407E088CDBCA99FBDB8415C47D2D7 /* EasyPeasy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyPeasy.swift; path = EasyPeasy/EasyPeasy.swift; sourceTree = "<group>"; };
+		FDEC659FDDC61AA22F98148FEC557FB7 /* Pods-CameraKitDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CameraKitDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		FF59DBCF8549850D135D63CCAAB274C6 /* PositionAttribute+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PositionAttribute+UIKit.swift"; path = "EasyPeasy/PositionAttribute+UIKit.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D50468F1CBFCD4424862697D7AAF56E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B18198448992B9F8FE4135004654CB4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95E10EAD0E027FF786ED436EC980DAD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				026BDA015F4B08A5BF79A26CAF9B23D6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C669C8342183FD14BB199D53291CEB0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F414578FFB52875E39CF20AEC7A6904 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		595852E343BA94C0DC54C1EA6A3C9CA9 /* ScrollableSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				0B67A52219391E95C37B7700DA192D04 /* ScrollableSegmentedControl.swift */,
+				73337C7EC8097D881CD4F63C9AEB6706 /* Support Files */,
+			);
+			name = ScrollableSegmentedControl;
+			path = ScrollableSegmentedControl;
+			sourceTree = "<group>";
+		};
+		73337C7EC8097D881CD4F63C9AEB6706 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C386A3124F5442C4D295CE98C6D4184 /* ScrollableSegmentedControl.modulemap */,
+				98B95B6DDCE446715A1620F772E4B227 /* ScrollableSegmentedControl-dummy.m */,
+				1758F0C8C39A16EBB214DBD2790535A1 /* ScrollableSegmentedControl-Info.plist */,
+				E28B0A0697354902CB443488B2B538DB /* ScrollableSegmentedControl-prefix.pch */,
+				090C83B838BFB2613B2ED887B61775B2 /* ScrollableSegmentedControl-umbrella.h */,
+				DE34218EB863C1223D5ADEB92BF45ECF /* ScrollableSegmentedControl.debug.xcconfig */,
+				2C788A08CA29022819898CBA46B8941E /* ScrollableSegmentedControl.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ScrollableSegmentedControl";
+			sourceTree = "<group>";
+		};
+		83054EA1F2EC7A46E815AF52FF2F34DF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC9E49668BBE54D9C96DBE42941960FC /* Pods-CameraKitDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		97B0EDDD1BFB77082136B394645B8109 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				14A92ED31007EF4E293CD5033ACC5556 /* EasyPeasy.modulemap */,
+				58B07D5CB0859A1F536DFC0C627D2804 /* EasyPeasy-dummy.m */,
+				B52F571665B5F1CAC868B6A9E3220340 /* EasyPeasy-Info.plist */,
+				583EEA7E019E48F2242A8FC17D180BFF /* EasyPeasy-prefix.pch */,
+				8A989584BA63F86C6B4A359CF110A5A0 /* EasyPeasy-umbrella.h */,
+				E26E2509E4D3357A276AF03D6CC653A6 /* EasyPeasy.debug.xcconfig */,
+				9A4BC56337B3621F0F541E3B77AE346C /* EasyPeasy.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/EasyPeasy";
+			sourceTree = "<group>";
+		};
+		98AFFF98CB20DD1DD3088E8892FEF426 /* EasyPeasy */ = {
+			isa = PBXGroup;
+			children = (
+				D4DBA90EC60CB4048583869327D95BBB /* Attribute.swift */,
+				11DBE4F179D8D4D6A7821F813C17A551 /* Collection+Easy.swift */,
+				9F6D2B85A2B36273D8FF24E69DA29F19 /* CompoundAttribute.swift */,
+				4C50771681E2E18FAB65CA656FE426EB /* Constant.swift */,
+				E9DBCC29EBF45B36C0AB846E793330A0 /* Context.swift */,
+				6640D7C03123DDD390D82541EE35E58C /* DimensionAttribute.swift */,
+				3B335BA77F06E0429082C2224DCFFF35 /* DimensionAttribute+AppKit.swift */,
+				62BF625490E219703794064752F55F7C /* DimensionAttribute+UIKit.swift */,
+				FC2407E088CDBCA99FBDB8415C47D2D7 /* EasyPeasy.swift */,
+				E2073F5F5AF58CB497FFFFD389E377FC /* Item.swift */,
+				CFF4E3E0AACFC0B924EE499A690CEEDC /* Item+AppKit.swift */,
+				54B07BCCD7B8784F092B4F5602B4894A /* Item+UIKit.swift */,
+				4F925AE1BCCF9EA903250E0636235EC3 /* Node.swift */,
+				8809DECE18CC8CBDF9D1E04698200929 /* NSLayoutGuide+Easy.swift */,
+				B6186386840E64528858A53400A389C6 /* NSView+Easy.swift */,
+				3EB802AEF92A862E3275C2EC161DD7E4 /* PositionAttribute.swift */,
+				355A8B504D8DD75345C88F2F3CF3DB10 /* PositionAttribute+AppKit.swift */,
+				FF59DBCF8549850D135D63CCAAB274C6 /* PositionAttribute+UIKit.swift */,
+				D07FF9C57DF6CCA17DFE5FC9A61F28F6 /* Priority.swift */,
+				692FC94EBB752B01C779C36B39E9C9B4 /* ReferenceAttribute.swift */,
+				7B03CB154033746538576A5FFFF41686 /* UILayoutGuide+Easy.swift */,
+				62E4155A07CB60D9EC6C09C44267D459 /* UIView+Easy.swift */,
+				97B0EDDD1BFB77082136B394645B8109 /* Support Files */,
+			);
+			name = EasyPeasy;
+			path = EasyPeasy;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C7BE0BDA782F73179CBDF1AE565EBA67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98AFFF98CB20DD1DD3088E8892FEF426 /* EasyPeasy */,
+				595852E343BA94C0DC54C1EA6A3C9CA9 /* ScrollableSegmentedControl */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				C7BE0BDA782F73179CBDF1AE565EBA67 /* Pods */,
+				D8B763141FF83B10BC4BC229AE6FDBA0 /* Products */,
+				83054EA1F2EC7A46E815AF52FF2F34DF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8B763141FF83B10BC4BC229AE6FDBA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8328E6FCAC1E4D4E635FEAE69D63A19E /* EasyPeasy.framework */,
+				D20355D74BBABEFD5C7309CE21388ED7 /* Pods_CameraKitDemo.framework */,
+				2748BCA90D1EFD810E43B2008D67BCBF /* ScrollableSegmentedControl.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC9E49668BBE54D9C96DBE42941960FC /* Pods-CameraKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B96451EAFA197B1FE182D3AAFDB6B36F /* Pods-CameraKitDemo.modulemap */,
+				0A91481B47A6DD4ABF44B31305803E56 /* Pods-CameraKitDemo-acknowledgements.markdown */,
+				FDEC659FDDC61AA22F98148FEC557FB7 /* Pods-CameraKitDemo-acknowledgements.plist */,
+				0D3A2F0A37BE3A486263EF3FEA5FF530 /* Pods-CameraKitDemo-dummy.m */,
+				33983BF72900EBB0BB4878F9FBD7C5D8 /* Pods-CameraKitDemo-frameworks.sh */,
+				C593F02169EEA6290F7170364B934ED9 /* Pods-CameraKitDemo-Info.plist */,
+				B5EFA8DB861EECA80C1D9B0298189CD7 /* Pods-CameraKitDemo-umbrella.h */,
+				2303522E51436963B147F09D12D1F40F /* Pods-CameraKitDemo.debug.xcconfig */,
+				1ABB6C3742B77A158E95B694F020F42E /* Pods-CameraKitDemo.release.xcconfig */,
+			);
+			name = "Pods-CameraKitDemo";
+			path = "Target Support Files/Pods-CameraKitDemo";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3CCAEACEAD93669E3A5643541C6D1D86 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF0B3933E17A032CFE7A755DB9B1414 /* EasyPeasy-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C19CBC5B28D5FD1F00F3D38ED7DEAD80 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ACC2CF9EB4B33D7927A5E49B4FE4110 /* Pods-CameraKitDemo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA44765F58561FEB8F17A3394A7D342E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87E324053D8BEE1277EB13746BEAD2DE /* ScrollableSegmentedControl-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0E378E4E9BEEC95F5F5250BD67FB0B29 /* Pods-CameraKitDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64F471E28B9B0C24ED927AB821E00CCC /* Build configuration list for PBXNativeTarget "Pods-CameraKitDemo" */;
+			buildPhases = (
+				C19CBC5B28D5FD1F00F3D38ED7DEAD80 /* Headers */,
+				53E933C823681DFDDD880DA226E67627 /* Sources */,
+				95E10EAD0E027FF786ED436EC980DAD2 /* Frameworks */,
+				5068DC590B61E9AB5E8BAECDD2B6C27A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FEA5DC8EA8882EA7F12574D7152D986 /* PBXTargetDependency */,
+				94E26BC972D22708643879836D0E95F8 /* PBXTargetDependency */,
+			);
+			name = "Pods-CameraKitDemo";
+			productName = "Pods-CameraKitDemo";
+			productReference = D20355D74BBABEFD5C7309CE21388ED7 /* Pods_CameraKitDemo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7AB385395597735698BB9CE5CEFC0EC3 /* EasyPeasy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 032482D0C151169F79DA40634ADACB19 /* Build configuration list for PBXNativeTarget "EasyPeasy" */;
+			buildPhases = (
+				3CCAEACEAD93669E3A5643541C6D1D86 /* Headers */,
+				A8F3D98ACDEB60B3F1C75984114939D9 /* Sources */,
+				7D50468F1CBFCD4424862697D7AAF56E /* Frameworks */,
+				D621379AAD820F7AE9E8EADAAD0778A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyPeasy;
+			productName = EasyPeasy;
+			productReference = 8328E6FCAC1E4D4E635FEAE69D63A19E /* EasyPeasy.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8EF03FFDDD4B9017D2CBE7F1C431A022 /* ScrollableSegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58481F3906A90621C5B2BF5F661477B4 /* Build configuration list for PBXNativeTarget "ScrollableSegmentedControl" */;
+			buildPhases = (
+				DA44765F58561FEB8F17A3394A7D342E /* Headers */,
+				0792BB27A942E5D15B4FA0487A6DD1AE /* Sources */,
+				C669C8342183FD14BB199D53291CEB0A /* Frameworks */,
+				2C4C30809C6E956CD995C3A312E50C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrollableSegmentedControl;
+			productName = ScrollableSegmentedControl;
+			productReference = 2748BCA90D1EFD810E43B2008D67BCBF /* ScrollableSegmentedControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = D8B763141FF83B10BC4BC229AE6FDBA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7AB385395597735698BB9CE5CEFC0EC3 /* EasyPeasy */,
+				0E378E4E9BEEC95F5F5250BD67FB0B29 /* Pods-CameraKitDemo */,
+				8EF03FFDDD4B9017D2CBE7F1C431A022 /* ScrollableSegmentedControl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C4C30809C6E956CD995C3A312E50C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5068DC590B61E9AB5E8BAECDD2B6C27A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D621379AAD820F7AE9E8EADAAD0778A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0792BB27A942E5D15B4FA0487A6DD1AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16335A3B4153380EC4BBAF4AF40D02AB /* ScrollableSegmentedControl-dummy.m in Sources */,
+				3335EB2DACFAE3A31573EA7CE9F69FCB /* ScrollableSegmentedControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53E933C823681DFDDD880DA226E67627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				196E2B936CD23F3563DEFB642153E2B7 /* Pods-CameraKitDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8F3D98ACDEB60B3F1C75984114939D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				743D938D8CF868161152217E69B389D7 /* Attribute.swift in Sources */,
+				A8D94CEDD3759E2B400034FA2C0E1016 /* Collection+Easy.swift in Sources */,
+				94BD05C42A3EE07CEA2E3E3F149791A6 /* CompoundAttribute.swift in Sources */,
+				4F792F05DE907B7C42EC4E8937CD373B /* Constant.swift in Sources */,
+				11A9B9F06C0F19E7BE88B4C1C93E01C0 /* Context.swift in Sources */,
+				05241A317DE089D8B9E44AD6882A349C /* DimensionAttribute+AppKit.swift in Sources */,
+				1E2EF38A0AD3CD5330B348D36E2CE146 /* DimensionAttribute+UIKit.swift in Sources */,
+				D5ACFFF642B863656B01CA75701BFCBF /* DimensionAttribute.swift in Sources */,
+				889D8FC8748D3F97E608E93395D632AD /* EasyPeasy-dummy.m in Sources */,
+				BB65461947EC1DAEC1477447EC650DA7 /* EasyPeasy.swift in Sources */,
+				118822FF2260F7E332050628C34E6C7B /* Item+AppKit.swift in Sources */,
+				8720188B4F1832E79DB3F048D3529DE9 /* Item+UIKit.swift in Sources */,
+				70ACAC891FBFE237C71E97CEE9A49BEA /* Item.swift in Sources */,
+				8D080A3F8645ABABCCFAD8C4400EF1F2 /* Node.swift in Sources */,
+				5E8A57CC72ACA5965EB559730E8F19C6 /* NSLayoutGuide+Easy.swift in Sources */,
+				2768AB5014345D3F9593C9351CE34CD2 /* NSView+Easy.swift in Sources */,
+				17B9EFF9B766C5651DC7DD2DDD95DCAC /* PositionAttribute+AppKit.swift in Sources */,
+				0CAF18D9DD346362ED6C7C0184A3356B /* PositionAttribute+UIKit.swift in Sources */,
+				0EE27DF164EF75F563C138ECE2BDEE73 /* PositionAttribute.swift in Sources */,
+				2BC3CCFDF96E2FE053D2B7BAA3841710 /* Priority.swift in Sources */,
+				6C4A2DEB12FE1597C582EF51C8652AFB /* ReferenceAttribute.swift in Sources */,
+				36C53A6C4AD28C05B1AE198F11D13505 /* UILayoutGuide+Easy.swift in Sources */,
+				BA5063CFF5E3AD341C93423AE833F2B1 /* UIView+Easy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FEA5DC8EA8882EA7F12574D7152D986 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EasyPeasy;
+			target = 7AB385395597735698BB9CE5CEFC0EC3 /* EasyPeasy */;
+			targetProxy = C8A91ED552714E6DAAF86672CEBC486D /* PBXContainerItemProxy */;
+		};
+		94E26BC972D22708643879836D0E95F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ScrollableSegmentedControl;
+			target = 8EF03FFDDD4B9017D2CBE7F1C431A022 /* ScrollableSegmentedControl */;
+			targetProxy = 7D437F528273EDA7683A1837AAC66C89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0B64088F38E678F57BD2CED621EF68F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2303522E51436963B147F09D12D1F40F /* Pods-CameraKitDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CameraKitDemo/Pods-CameraKitDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CameraKitDemo/Pods-CameraKitDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		257497152829C177993B5EC99C1D227A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		7A5ABFA30D12A43E7D3E2C1B06E64071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE34218EB863C1223D5ADEB92BF45ECF /* ScrollableSegmentedControl.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl.modulemap";
+				PRODUCT_MODULE_NAME = ScrollableSegmentedControl;
+				PRODUCT_NAME = ScrollableSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7BAF4D6FD6682CFF35182A63A63AE05C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ABB6C3742B77A158E95B694F020F42E /* Pods-CameraKitDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CameraKitDemo/Pods-CameraKitDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CameraKitDemo/Pods-CameraKitDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8A8D61509502965FE3CD1CEFD70D7FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E26E2509E4D3357A276AF03D6CC653A6 /* EasyPeasy.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EasyPeasy/EasyPeasy-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EasyPeasy/EasyPeasy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/EasyPeasy/EasyPeasy.modulemap";
+				PRODUCT_MODULE_NAME = EasyPeasy;
+				PRODUCT_NAME = EasyPeasy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8ECBE46BEF8F34D8D6EBB4370AF668CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A4BC56337B3621F0F541E3B77AE346C /* EasyPeasy.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EasyPeasy/EasyPeasy-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EasyPeasy/EasyPeasy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/EasyPeasy/EasyPeasy.modulemap";
+				PRODUCT_MODULE_NAME = EasyPeasy;
+				PRODUCT_NAME = EasyPeasy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F536F33BC00F90A49D7ED2BD2212037A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C788A08CA29022819898CBA46B8941E /* ScrollableSegmentedControl.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl.modulemap";
+				PRODUCT_MODULE_NAME = ScrollableSegmentedControl;
+				PRODUCT_NAME = ScrollableSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		032482D0C151169F79DA40634ADACB19 /* Build configuration list for PBXNativeTarget "EasyPeasy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A8D61509502965FE3CD1CEFD70D7FEC /* Debug */,
+				8ECBE46BEF8F34D8D6EBB4370AF668CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
+				257497152829C177993B5EC99C1D227A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58481F3906A90621C5B2BF5F661477B4 /* Build configuration list for PBXNativeTarget "ScrollableSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A5ABFA30D12A43E7D3E2C1B06E64071 /* Debug */,
+				F536F33BC00F90A49D7ED2BD2212037A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64F471E28B9B0C24ED927AB821E00CCC /* Build configuration list for PBXNativeTarget "Pods-CameraKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B64088F38E678F57BD2CED621EF68F0 /* Debug */,
+				7BAF4D6FD6682CFF35182A63A63AE05C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
