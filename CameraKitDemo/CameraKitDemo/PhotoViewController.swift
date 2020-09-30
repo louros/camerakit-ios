@@ -9,6 +9,7 @@
 import UIKit
 import CameraKit
 import AVFoundation
+import EasyPeasy
 
 class PhotoPreviewViewController: UIViewController, UIScrollViewDelegate {
     
@@ -103,6 +104,10 @@ class PhotoViewController: UIViewController, CKFSessionDelegate {
     @IBOutlet weak var zoomLabel: UILabel!
     @IBOutlet weak var captureButton: UIButton!
     
+    var recordButton: RecordButton!
+    var progressTimer : Timer!
+    var progress : CGFloat! = 0
+    
     func didChangeValue(session: CKFSession, value: Any, key: String) {
         if key == "zoom" {
             self.zoomLabel.text = String(format: "%.1fx", value as! Double)
@@ -133,6 +138,52 @@ class PhotoViewController: UIViewController, CKFSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setup()
+    }
+    
+    func setup() {
+        let closeButton = CameraOverlayButton(frame: CGRect(x: 0, y: 80, width: 64, height: 64), title: "", icon: "Navigation/close")
+        self.view.addSubview(closeButton)
+        closeButton.easy.layout(Top(60), Left(10), Width(64), Height(64))
+        
+        let flipButton = CameraOverlayButton(frame: CGRect(x: 0, y: 80, width: 64, height: 64), title: "Flip", icon: "Camera/flip")
+        self.view.addSubview(flipButton)
+        flipButton.easy.layout(Top(60), Right(10), Width(64), Height(64))
+        
+        let filtersButton = CameraOverlayButton(frame: CGRect(x: 0, y: 80, width: 64, height: 64), title: "Filters", icon: "Camera/filter")
+        self.view.addSubview(filtersButton)
+        filtersButton.easy.layout(Top(20).to(flipButton), Right(10), Width(64), Height(64))
+        
+        let timerButton = CameraOverlayButton(frame: CGRect(x: 0, y: 80, width: 64, height: 64), title: "Timer", icon: "Camera/timer")
+        self.view.addSubview(timerButton)
+        timerButton.easy.layout(Top(20).to(filtersButton), Right(10), Width(64), Height(64))
+        
+        let flashButton = CameraOverlayButton(frame: CGRect(x: 0, y: 80, width: 64, height: 64), title: "Flash", icon: "Camera/flash-on")
+        self.view.addSubview(flashButton)
+        flashButton.easy.layout(Top(20).to(timerButton), Right(10), Width(64), Height(64))
+        
+        recordButton = RecordButton(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+        recordButton.pictureMode = true
+        recordButton.buttonColor = .pink
+        recordButton.progressColor = .red
+        recordButton.closeWhenFinished = false
+        recordButton.addTarget(self, action: #selector(record), for: .touchDown)
+        recordButton.addTarget(self, action: #selector(stop), for: UIControl.Event.touchUpInside)
+        recordButton.center.x = self.view.center.x
+        self.view.addSubview(recordButton)
+        recordButton.easy.layout(CenterX(), Bottom(90), Width(80), Height(80))
+        
+        
+        let swapModeButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Swap to", icon: "Camera/video")
+        swapModeButton.addTarget(self, action: #selector(handleVideo(_:)), for: .touchUpInside)
+        self.view.addSubview(swapModeButton)
+        swapModeButton.easy.layout(Left(25).to(recordButton), CenterY().to(recordButton), Width(80), Height(80))
+        
+        let galleryButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Gallery", icon: "")
+        self.view.addSubview(galleryButton)
+        galleryButton.easy.layout(Right(25).to(recordButton), CenterY().to(recordButton), Width(80), Height(80))
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -145,17 +196,8 @@ class PhotoViewController: UIViewController, CKFSessionDelegate {
         self.previewView.session?.stop()
     }
     
-    @IBAction func handleCapture(_ sender: Any) {
-        if let session = self.previewView.session as? CKFPhotoSession {
-          session.capture(AVCapturePhotoSettings(), { (image, data, settings) in
-            self.performSegue(withIdentifier: "Preview", sender: image)
-          }) { (_) in
-            //
-          }
-        }
-    }
-    
-    @IBAction func handleVideo(_ sender: Any) {
+    @objc
+    func handleVideo(_ sender: Any) {
         guard let window = UIApplication.shared.keyWindow else {
             return
         }
@@ -168,5 +210,33 @@ class PhotoViewController: UIViewController, CKFSessionDelegate {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    @objc func record() {
+        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        
+        if let session = self.previewView.session as? CKFPhotoSession {
+          session.capture(AVCapturePhotoSettings(), { (image, data, settings) in
+            //print("image \(image)")
+            //self.performSegue(withIdentifier: "Preview", sender: image)
+          }) { (_) in
+            //
+          }
+        }
+    }
+    
+    @objc func updateProgress() {
+        let maxDuration = CGFloat(5) // Max duration of the recordButton
+        
+        progress = progress + (CGFloat(0.05) / maxDuration)
+        recordButton.setProgress(progress)
+        
+        if progress >= 1 {
+            progressTimer.invalidate()
+        }
+    }
+    
+    @objc func stop() {
+        self.progressTimer.invalidate()
     }
 }

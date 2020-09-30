@@ -32,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0709D12625246D19006D4A56 /* CameraKitDemo.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = CameraKitDemo.xcworkspace; sourceTree = "<group>"; };
 		3A8CBA2E2216B38200E9E7BE /* CameraKitDemo-Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CameraKitDemo-Objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8CBA312216B38200E9E7BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A8CBA322216B38200E9E7BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		3A8CBA252216B38200E9E7BE = {
 			isa = PBXGroup;
 			children = (
+				0709D12625246D19006D4A56 /* CameraKitDemo.xcworkspace */,
 				3A8CBA472216B38E00E9E7BE /* CameraKit.framework */,
 				3A8CBA302216B38200E9E7BE /* CameraKitDemo-Objc */,
 				3A8CBA2F2216B38200E9E7BE /* Products */,
