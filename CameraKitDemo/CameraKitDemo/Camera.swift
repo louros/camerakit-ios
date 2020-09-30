@@ -14,7 +14,11 @@ class CameraOverlayButton: UIButton {
     var iconView: UIImageView = UIImageView()
     
     var title: String = ""
-    var icon: String = ""
+    var icon: String = "" {
+        didSet {
+            iconView.image = UIImage(named: icon)
+        }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
