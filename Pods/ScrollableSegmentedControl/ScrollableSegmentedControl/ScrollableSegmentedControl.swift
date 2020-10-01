@@ -294,6 +294,7 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
      */
     @IBInspectable
     @objc public var underlineSelected:Bool = false
+    @objc public var circularShadeSelected: Bool = false
     
     // MARK: - Layout management
     
@@ -472,9 +473,10 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
             }
             
             segmentCell.showUnderline = segmentedControl.underlineSelected
-            if segmentedControl.underlineSelected {
-                segmentCell.tintColor = segmentedControl.tintColor
-            }
+            segmentCell.showCircularShade = segmentedControl.circularShadeSelected
+            //if segmentedControl.underlineSelected {
+            segmentCell.tintColor = segmentedControl.tintColor
+            //}
             
             
             segmentCell.contentColor = segmentedControl.segmentContentColor
@@ -532,6 +534,8 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
         static let defaultTextColor = UIColor.darkGray
         
         var underlineView:UIView?
+        var circularShadeView:UIView?
+        
         public var contentColor:UIColor?
         public var selectedContentColor:UIColor?
         
@@ -539,6 +543,27 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
         var highlightedAttributedTitle:NSAttributedString?
         var selectedAttributedTitle:NSAttributedString?
         var variableConstraints = [NSLayoutConstraint]()
+        
+        var showCircularShade: Bool = false {
+            didSet {
+                print("showCircularShade \(showCircularShade)")
+                if oldValue != showCircularShade {
+                    if oldValue == false && circularShadeView != nil {
+                        circularShadeView?.removeFromSuperview()
+                    } else {
+                        circularShadeView = UIView()
+                        circularShadeView!.tag = 888
+                        circularShadeView!.backgroundColor = UIColor(red: 0.138, green: 0.127, blue: 0.132, alpha: 1)
+                        circularShadeView!.layer.cornerRadius = 16
+                        circularShadeView!.isHidden = !isSelected
+                        contentView.insertSubview(circularShadeView!, at: 0)
+                    }
+                    
+                    configureConstraints()
+                }
+            }
+        }
+        
         
         var showUnderline:Bool = false {
             didSet {
@@ -586,6 +611,14 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
                 underline.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
                 underline.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
             }
+            
+            if let shadeView = circularShadeView {
+                shadeView.translatesAutoresizingMaskIntoConstraints = false
+                shadeView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+                shadeView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5).isActive = true
+                shadeView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5).isActive = true
+                shadeView.heightAnchor.constraint(equalToConstant: self.frame.height - 10).isActive = true
+            }
         }
         
         override func setNeedsUpdateConstraints() {
@@ -597,12 +630,14 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
         override var isHighlighted: Bool {
             didSet {
                 underlineView?.isHidden = !isHighlighted && !isSelected
+                circularShadeView?.isHidden = !isHighlighted && !isSelected
             }
         }
         
         override var isSelected: Bool {
             didSet {
                 underlineView?.isHidden = !isSelected
+                circularShadeView?.isHidden = !isSelected
             }
         }
     }

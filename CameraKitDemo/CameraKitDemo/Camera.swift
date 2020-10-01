@@ -32,7 +32,7 @@ class CameraBase: UIViewController, CKFSessionDelegate {
         control.insertSegment(withTitle: "2x", image: nil, at: 3)
         control.insertSegment(withTitle: "3x", image: nil, at: 4)
 
-        control.underlineSelected = true
+        control.circularShadeSelected = true
         control.tintColor = .white
         control.selectedSegmentContentColor = .white
         control.fixedSegmentWidth = true
@@ -56,7 +56,7 @@ class CameraBase: UIViewController, CKFSessionDelegate {
         control.insertSegment(withTitle: "10s", image: nil, at: 1)
         control.insertSegment(withTitle: "15s", image: nil, at: 2)
 
-        control.underlineSelected = true
+        control.circularShadeSelected = true
         control.tintColor = .white
         control.selectedSegmentContentColor = .white
         control.fixedSegmentWidth = true
