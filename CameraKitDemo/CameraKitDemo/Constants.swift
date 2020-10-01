@@ -20,5 +20,6 @@ extension UIColor {
     static let green = #colorLiteral(red: 0.431372549, green: 0.9019607843, blue: 0.6745098039, alpha: 1)
     static let yellow = #colorLiteral(red: 0.9490196078, green: 0.7882352941, blue: 0.2980392157, alpha: 1)
     static let gray = #colorLiteral(red: 0.5098039216, green: 0.5098039216, blue: 0.5098039216, alpha: 1)
+    static let gray2 = #colorLiteral(red: 0.3568627451, green: 0.3490196078, blue: 0.4705882353, alpha: 1)
     static let red = #colorLiteral(red: 1, green: 0.3725490196, blue: 0.3725490196, alpha: 1)
 }

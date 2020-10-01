@@ -147,15 +147,18 @@ class PhotoViewController: CameraBase {
         self.view.addSubview(recordButton)
         recordButton.easy.layout(CenterX(), Bottom(90), Width(80), Height(80))
         
-        let swapModeButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Swap to", icon: UIImage(named: "Camera/video"))
+        swapModeButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Swap to", icon: UIImage(named: "Camera/video"))
         swapModeButton.addTarget(self, action: #selector(handleVideo(_:)), for: .touchUpInside)
         self.view.addSubview(swapModeButton)
         swapModeButton.easy.layout(Left(25).to(recordButton), CenterY().to(recordButton), Width(80), Height(80))
         
-        let galleryButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Gallery", icon: nil)
+        galleryButton = CameraGalleryButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Gallery", icon: nil)
         self.view.addSubview(galleryButton)
         galleryButton.easy.layout(Right(25).to(recordButton), CenterY().to(recordButton), Width(80), Height(80))
         
+        fetchLastImageInGallery { (image) in
+            self.galleryButton.icon = image
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -90,9 +90,6 @@ class VideoViewController: CameraBase {
     var deleteClipButton: CameraActionButton!
     var nextButton: CameraActionButton!
     
-    var swapModeButton: CameraSwapButton!
-    var galleryButton: CameraSwapButton!
-    
     let maxVideoLength: Int = 5
     let maxVideoSegments: Int = 5
     var segmentWidth: CGFloat = 0.0
@@ -165,9 +162,13 @@ class VideoViewController: CameraBase {
         self.view.addSubview(swapModeButton)
         swapModeButton.easy.layout(Left(25).to(recordButton), CenterY().to(recordButton), Width(80), Height(80))
         
-        galleryButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Gallery", icon: nil)
+        galleryButton = CameraGalleryButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Gallery", icon: nil)
         self.view.addSubview(galleryButton)
         galleryButton.easy.layout(Right(25).to(recordButton), CenterY().to(recordButton), Width(80), Height(80))
+        
+        fetchLastImageInGallery { (image) in
+            self.galleryButton.icon = image
+        }
         
         videoProgressContainer = UIView(frame: CGRect(x: 25, y: 50, width: self.view.frame.width - 50, height: 8))
         videoProgressContainer.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
@@ -224,7 +225,17 @@ class VideoViewController: CameraBase {
         if videoProgressSegments.count > 0 {
             let alert = UIAlertController(title: "Discard current recording progress?", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: { (action) in
+                for segment in self.videoProgressSegments {
+                    segment.removeFromSuperview()
+                }
                 
+                self.videoProgressSegments = []
+            
+                self.galleryButton.isHidden = false
+                self.swapModeButton.isHidden = false
+                
+                self.deleteClipButton.isHidden = true
+                self.nextButton.isHidden = true
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)

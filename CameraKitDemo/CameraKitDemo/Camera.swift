@@ -10,6 +10,7 @@ import UIKit
 import CameraKit
 import EasyPeasy
 import ScrollableSegmentedControl
+import Photos
 
 class CameraBase: UIViewController, CKFSessionDelegate {
 
@@ -74,6 +75,9 @@ class CameraBase: UIViewController, CKFSessionDelegate {
     var timerButton: CameraOverlayButton!
     var flashButton: CameraOverlayButton!
     
+    var swapModeButton: CameraSwapButton!
+    var galleryButton: CameraGalleryButton!
+    
     var flashMode: CKFPhotoSession.FlashMode = .auto
     var cameraType: CKFSession.CameraPosition = .back
     
@@ -83,6 +87,32 @@ class CameraBase: UIViewController, CKFSessionDelegate {
     func didChangeValue(session: CKFSession, value: Any, key: String) {
         
     }
+    
+    func fetchLastImageInGallery(completion: @escaping (UIImage?) -> Void) -> Void {
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: false)]
+        fetchOptions.fetchLimit = 3
+
+        // Fetch the image assets
+        let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: fetchOptions)
+
+        if fetchResult.count > 0 {
+            fetchPhotoAtIndex(0, 1, fetchResult) { (image) in
+                completion(image)
+            }
+        }
+    }
+    
+    func fetchPhotoAtIndex(_ index:Int, _ totalImageCountNeeded: Int, _ fetchResult: PHFetchResult<PHAsset>, completion: @escaping (UIImage?) -> Void) {
+            let requestOptions = PHImageRequestOptions()
+            requestOptions.isSynchronous = true
+
+            PHImageManager.default().requestImage(for: fetchResult.object(at: index) as PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.aspectFill, options: requestOptions, resultHandler: { (image, _) in
+                if let image = image {
+                    completion(image)
+                }
+            })
+        }
 }
 
 class CameraOverlayButton: UIButton {
@@ -164,6 +194,26 @@ class CameraSwapButton: CameraOverlayButton {
         label.font = UIFont.systemFont(ofSize: 12)
         self.addSubview(label)
         label.easy.layout(Left(), Right(), Top(5).to(iconView), Height(22))
+    }
+}
+
+class CameraGalleryButton: CameraOverlayButton {
+    override func setup() {
+        self.layer.shadowOpacity = 0.0
+        
+        let bg = UIView(frame: CGRect(x: 0, y: 0, width: 48, height: 48))
+        bg.backgroundColor = .cardsGray
+        bg.layer.cornerRadius = 12
+        bg.clipsToBounds = true
+        self.insertSubview(bg, at: 0)
+        bg.easy.layout(CenterX(), CenterY(), Width(48), Height(48))
+        
+        iconView.contentMode = .scaleAspectFill
+        iconView.image = icon
+        iconView.layer.cornerRadius = 12
+        iconView.clipsToBounds = true
+        self.addSubview(iconView)
+        iconView.easy.layout(CenterX(), CenterY(), Width(44), Height(44))
     }
 }
 
