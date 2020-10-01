@@ -26,9 +26,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     </view>
                                     <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmb-ws-sF8">
-                                        <rect key="frame" x="171.66666666666666" y="8" width="32" height="19"/>
+                                        <rect key="frame" x="171.33333333333334" y="8" width="32.666666666666657" height="19"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LW1-hd-LLC">
-                                            <rect key="frame" x="0.0" y="0.0" width="32" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="32.666666666666657" height="19"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF9-q7-P13">
@@ -71,9 +71,6 @@
                             <constraint firstItem="0UD-h8-yNR" firstAttribute="leading" secondItem="DhS-yF-uEy" secondAttribute="leading" id="iDq-Rf-sYw"/>
                             <constraint firstAttribute="bottom" secondItem="0UD-h8-yNR" secondAttribute="bottom" id="ziZ-YV-nLR"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="DJh-YE-Sr2" appends="YES" id="djN-Pz-yZx"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="previewView" destination="WrD-in-aex" id="BCt-yF-n8q"/>
@@ -81,16 +78,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVv-bT-COB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="caX-SM-Exu">
-                    <connections>
-                        <action selector="handleSwipeDown:" destination="ijx-F8-xlM" id="TTn-3M-TqU"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="DJh-YE-Sr2">
-                    <connections>
-                        <action selector="handleSwipeUp:" destination="ijx-F8-xlM" id="TaN-zP-kwB"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1000.8" y="-676.10837438423653"/>
         </scene>

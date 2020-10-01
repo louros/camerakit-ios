@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0709D12125246937006D4A56 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709D12025246937006D4A56 /* Camera.swift */; };
-		0709D130252472DB006D4A56 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709D12F252472DB006D4A56 /* RecordButton.swift */; };
 		0709D13225247490006D4A56 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709D1312524748F006D4A56 /* Utils.swift */; };
 		0709D13425247496006D4A56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709D13325247495006D4A56 /* Constants.swift */; };
 		3A76E33721E5415600C8461D /* CameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD9375A21E53C14006A8C86 /* CameraKit.framework */; };
@@ -41,7 +40,6 @@
 		01F08FBEFA5E247E53DFEF6C /* Pods-CameraKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraKitDemo.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-CameraKitDemo/Pods-CameraKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		05CF9757FA3F1385434FEF33 /* Pods_CameraKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CameraKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0709D12025246937006D4A56 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
-		0709D12F252472DB006D4A56 /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		0709D1312524748F006D4A56 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0709D13325247495006D4A56 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3A92F21F21FF2AAC007E9BBE /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			children = (
 				3AD9374B21E53BF2006A8C86 /* Main.storyboard */,
 				0709D12025246937006D4A56 /* Camera.swift */,
-				0709D12F252472DB006D4A56 /* RecordButton.swift */,
 				0709D1312524748F006D4A56 /* Utils.swift */,
 				0709D13325247495006D4A56 /* Constants.swift */,
 				3AD9374921E53BF2006A8C86 /* PhotoViewController.swift */,
@@ -243,7 +240,6 @@
 			files = (
 				3AD9374A21E53BF2006A8C86 /* PhotoViewController.swift in Sources */,
 				0709D12125246937006D4A56 /* Camera.swift in Sources */,
-				0709D130252472DB006D4A56 /* RecordButton.swift in Sources */,
 				0709D13225247490006D4A56 /* Utils.swift in Sources */,
 				3A93779121F0B181007386E4 /* VideoViewController.swift in Sources */,
 				3A92F22021FF2AAC007E9BBE /* UIView+Border.swift in Sources */,

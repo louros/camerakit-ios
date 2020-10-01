@@ -191,3 +191,62 @@ class CameraLibraryButton: CameraOverlayButton {
     }
 }
 
+@objc open class RecordButton: UIButton {
+    let ringCircle = CAShapeLayer()
+    var ringPath: UIBezierPath?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowRadius = 2
+        self.layer.shadowOpacity = 0.25
+        
+        setup()
+    }
+    
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup() {
+        let innerCircle = CALayer()
+        innerCircle.frame = CGRect(x: 6, y: 6, width: 68, height: 68)
+        innerCircle.backgroundColor = UIColor.pink.cgColor
+        innerCircle.cornerRadius = 34
+        self.layer.addSublayer(innerCircle)
+        
+        let startAngle: CGFloat = CGFloat(Double.pi) + CGFloat(Double.pi/2)
+        let endAngle: CGFloat = CGFloat(Double.pi) * 3 + CGFloat(Double.pi/2)
+        
+        ringPath = UIBezierPath(arcCenter: CGPoint(x: self.frame.midX,y: self.frame.midY),
+                                radius: self.frame.size.width / 2,
+                                startAngle: startAngle,
+                                endAngle: endAngle,
+                                clockwise: true)
+        
+        ringCircle.path = ringPath!.cgPath
+        ringCircle.backgroundColor = nil
+        ringCircle.fillColor = nil
+        ringCircle.strokeColor = UIColor.pink.cgColor.copy(alpha: 0.5)
+        ringCircle.lineWidth = 4.0
+        ringCircle.strokeStart = 0.0
+        ringCircle.strokeEnd = 1.0
+        self.layer.addSublayer(ringCircle)
+    }
+    
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+    
+        self.ringCircle.lineWidth = 8.0
+        self.ringCircle.path = self.ringPath!.cgPath
+    }
+    
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+    
+        self.ringCircle.lineWidth = 4.0
+        self.ringCircle.path = self.ringPath!.cgPath
+    }
+}

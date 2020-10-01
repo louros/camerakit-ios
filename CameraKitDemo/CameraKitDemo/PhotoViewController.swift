@@ -141,13 +141,8 @@ class PhotoViewController: CameraBase {
         self.view.addSubview(flashButton)
         flashButton.easy.layout(Top(20).to(timerButton), Right(10), Width(64), Height(64))
         
-        recordButton = RecordButton(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
-        recordButton.pictureMode = true
-        recordButton.buttonColor = .pink
-        recordButton.progressColor = .red
-        recordButton.closeWhenFinished = false
-        recordButton.addTarget(self, action: #selector(record), for: .touchDown)
-        recordButton.addTarget(self, action: #selector(stop), for: UIControl.Event.touchUpInside)
+        recordButton = RecordButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        recordButton.addTarget(self, action: #selector(capturePhotoAction), for: .touchDown)
         recordButton.center.x = self.view.center.x
         self.view.addSubview(recordButton)
         recordButton.easy.layout(CenterX(), Bottom(90), Width(80), Height(80))
@@ -171,6 +166,10 @@ class PhotoViewController: CameraBase {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.previewView.session?.stop()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     @objc
@@ -244,35 +243,14 @@ class PhotoViewController: CameraBase {
         }
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    @objc func record() {
-        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
-        
+    @objc
+    func capturePhotoAction() {
         if let session = self.previewView.session as? CKFPhotoSession {
           session.capture(AVCapturePhotoSettings(), { (image, data, settings) in
-            //print("image \(image)")
-            //self.performSegue(withIdentifier: "Preview", sender: image)
+            print("image \(image)")
+            
           }) { (_) in
-            //
           }
         }
-    }
-    
-    @objc func updateProgress() {
-        let maxDuration = CGFloat(5) // Max duration of the recordButton
-        
-        progress = progress + (CGFloat(0.05) / maxDuration)
-        recordButton.setProgress(progress)
-        
-        if progress >= 1 {
-            progressTimer.invalidate()
-        }
-    }
-    
-    @objc func stop() {
-        self.progressTimer.invalidate()
     }
 }

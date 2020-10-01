@@ -147,11 +147,7 @@ class VideoViewController: CameraBase {
         self.view.addSubview(flashButton)
         flashButton.easy.layout(Top(20).to(timerButton), Right(10), Width(64), Height(64))
         
-        recordButton = RecordButton(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
-        recordButton.pictureMode = true
-        recordButton.buttonColor = .pink
-        recordButton.progressColor = .red
-        recordButton.closeWhenFinished = false
+        recordButton = RecordButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
         recordButton.addTarget(self, action: #selector(record), for: .touchDown)
         recordButton.addTarget(self, action: #selector(stop), for: UIControl.Event.touchUpInside)
         recordButton.center.x = self.view.center.x
@@ -285,7 +281,7 @@ class VideoViewController: CameraBase {
         let maxDuration = CGFloat(5) // Max duration of the recordButton
         
         progress = progress + (CGFloat(0.05) / maxDuration)
-        recordButton.setProgress(progress)
+        //recordButton.setProgress(progress)
         
         if progress >= 1 {
             progressTimer.invalidate()
