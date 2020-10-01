@@ -125,6 +125,7 @@ class VideoViewController: CameraBase {
     
     func setup() {
         closeButton = CameraOverlayButton(frame: CGRect(x: 0, y: 80, width: 64, height: 64), title: "", icon: UIImage(named: "Navigation/close"))
+        closeButton.addTarget(self, action: #selector(closeAction(_:)), for: .touchUpInside)
         self.view.addSubview(closeButton)
         closeButton.easy.layout(Top(60), Left(10), Width(64), Height(64))
         
@@ -178,6 +179,7 @@ class VideoViewController: CameraBase {
         segmentWidth = videoProgressContainer.frame.width / CGFloat(maxVideoSegments)
         
         deleteClipButton = CameraActionButton(frame: CGRect(x: 0, y: 80, width: 48, height: 48), title: "", icon: UIImage(named: "Action/delete"))
+        deleteClipButton.addTarget(self, action: #selector(deleteClipAction(_:)), for: .touchUpInside)
         deleteClipButton.backgroundColor = .gray2
         self.view.addSubview(deleteClipButton)
         deleteClipButton.easy.layout(Right(50).to(recordButton), CenterY().to(recordButton), Width(48), Height(48))
@@ -215,6 +217,42 @@ class VideoViewController: CameraBase {
                 }
             }
         }
+    }
+    
+    @objc
+    func closeAction(_ sender: UIButton) {
+        if videoProgressSegments.count > 0 {
+            let alert = UIAlertController(title: "Discard current recording progress?", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: { (action) in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else {
+            // dismiss
+        }
+    }
+    
+    @objc
+    func deleteClipAction(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Discard last clip?", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: { (action) in
+            
+            let activeSegment = self.videoProgressSegments[self.videoProgressSegments.count - 1]
+            activeSegment.removeFromSuperview()
+            
+            self.videoProgressSegments.remove(at: self.videoProgressSegments.count - 1)
+            
+            if self.videoProgressSegments.count == 0 {
+                self.galleryButton.isHidden = false
+                self.swapModeButton.isHidden = false
+                
+                self.deleteClipButton.isHidden = true
+                self.nextButton.isHidden = true
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc
