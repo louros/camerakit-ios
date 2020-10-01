@@ -26,9 +26,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     </view>
                                     <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmb-ws-sF8">
-                                        <rect key="frame" x="171.33333333333334" y="8" width="32.666666666666657" height="19"/>
+                                        <rect key="frame" x="171.33333333333334" y="8" width="32.333333333333343" height="19"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LW1-hd-LLC">
-                                            <rect key="frame" x="0.0" y="0.0" width="32.666666666666657" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="33" height="19"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF9-q7-P13">
@@ -94,10 +94,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5V-hZ-kXh">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aD4-vr-3Ay" customClass="CKFPreviewView" customModule="CameraKit">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     </view>
                                     <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geg-uJ-o6S">
                                         <rect key="frame" x="171" y="8" width="33" height="19"/>
@@ -143,8 +143,8 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="H5V-hZ-kXh" secondAttribute="trailing" id="JBy-q5-VZw"/>
                             <constraint firstItem="H5V-hZ-kXh" firstAttribute="leading" secondItem="nSx-eW-cIl" secondAttribute="leading" id="ZQf-KZ-Erc"/>
-                            <constraint firstItem="H5V-hZ-kXh" firstAttribute="top" secondItem="4Ty-lX-grG" secondAttribute="bottom" id="r2b-XE-gzV"/>
-                            <constraint firstItem="OdM-Fw-vTe" firstAttribute="top" secondItem="H5V-hZ-kXh" secondAttribute="bottom" id="rc8-xK-EC1"/>
+                            <constraint firstItem="H5V-hZ-kXh" firstAttribute="top" secondItem="4Ty-lX-grG" secondAttribute="bottom" constant="-44" id="r2b-XE-gzV"/>
+                            <constraint firstItem="OdM-Fw-vTe" firstAttribute="top" secondItem="H5V-hZ-kXh" secondAttribute="bottom" constant="-34" id="rc8-xK-EC1"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="lS0-ae-g6z" appends="YES" id="2b9-A9-j01"/>
@@ -167,7 +167,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-999" y="-1458"/>
+            <point key="canvasLocation" x="-999.20000000000005" y="-1458.6206896551726"/>
         </scene>
     </scenes>
 </document>

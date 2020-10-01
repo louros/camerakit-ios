@@ -15,7 +15,7 @@ class CameraBase: UIViewController, CKFSessionDelegate {
 
     var recordButton: RecordButton!
     var progressTimer : Timer!
-    var progress : CGFloat! = 0
+    var progress : CGFloat = 0.0
     
     lazy var speedSegmentedControl: ScrollableSegmentedControl = {
         let blurEffect = UIBlurEffect(style: .dark)
@@ -167,6 +167,18 @@ class CameraSwapButton: CameraOverlayButton {
     }
 }
 
+class CameraActionButton: CameraOverlayButton {
+    override func setup() {
+        self.layer.shadowOpacity = 0.0
+        self.layer.cornerRadius = self.frame.width / 2
+        self.clipsToBounds = true
+        
+        iconView.image = icon?.withPadding(14.0)
+        self.addSubview(iconView)
+        iconView.easy.layout(CenterX(), CenterY(), Width(48), Height(48))
+    }
+}
+
 class CameraLibraryButton: CameraOverlayButton {
     override func setup() {
         self.layer.shadowOpacity = 0.0
@@ -195,13 +207,10 @@ class CameraLibraryButton: CameraOverlayButton {
     let ringCircle = CAShapeLayer()
     var ringPath: UIBezierPath?
     
+    var isRecording: Bool = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
-        self.layer.shadowRadius = 2
-        self.layer.shadowOpacity = 0.25
         
         setup()
     }
@@ -241,6 +250,8 @@ class CameraLibraryButton: CameraOverlayButton {
     
         self.ringCircle.lineWidth = 8.0
         self.ringCircle.path = self.ringPath!.cgPath
+        
+        isRecording = true
     }
     
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -248,5 +259,7 @@ class CameraLibraryButton: CameraOverlayButton {
     
         self.ringCircle.lineWidth = 4.0
         self.ringCircle.path = self.ringPath!.cgPath
+        
+        isRecording = false
     }
 }

@@ -86,18 +86,23 @@ class VideoSettingsViewController: UITableViewController {
 
 class VideoViewController: CameraBase {
     @IBOutlet weak var zoomLabel: UILabel!
+    
+    var deleteClipButton: CameraActionButton!
+    var nextButton: CameraActionButton!
+    
+    var swapModeButton: CameraSwapButton!
+    var galleryButton: CameraSwapButton!
+    
+    let maxVideoLength: Int = 5
+    let maxVideoSegments: Int = 5
+    var segmentWidth: CGFloat = 0.0
+    
+    var videoProgressContainer: UIView!
+    var videoProgressSegments: [UIView] = []
 
     override func didChangeValue(session: CKFSession, value: Any, key: String) {
         if key == "zoom" {
             self.zoomLabel.text = String(format: "%.1fx", value as! Double)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? VideoSettingsViewController {
-            vc.previewView = self.previewView
-        } else if let nvc = segue.destination as? UINavigationController, let vc = nvc.children.first as? VideoPreviewViewController {
-            vc.url = sender as? URL
         }
     }
     
@@ -154,15 +159,35 @@ class VideoViewController: CameraBase {
         self.view.addSubview(recordButton)
         recordButton.easy.layout(CenterX(), Bottom(90), Width(80), Height(80))
         
-        
-        let swapModeButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Swap to", icon: UIImage(named: "Camera/camera"))
+        swapModeButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Swap to", icon: UIImage(named: "Camera/camera"))
         swapModeButton.addTarget(self, action: #selector(handlePhoto(_:)), for: .touchUpInside)
         self.view.addSubview(swapModeButton)
         swapModeButton.easy.layout(Left(25).to(recordButton), CenterY().to(recordButton), Width(80), Height(80))
         
-        let galleryButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Gallery", icon: nil)
+        galleryButton = CameraSwapButton(frame: CGRect(x: 0, y: 80, width: 80, height: 80), title: "Gallery", icon: nil)
         self.view.addSubview(galleryButton)
         galleryButton.easy.layout(Right(25).to(recordButton), CenterY().to(recordButton), Width(80), Height(80))
+        
+        videoProgressContainer = UIView(frame: CGRect(x: 25, y: 50, width: self.view.frame.width - 50, height: 8))
+        videoProgressContainer.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
+        videoProgressContainer.layer.cornerRadius = 4
+        videoProgressContainer.clipsToBounds = true
+        self.view.addSubview(videoProgressContainer)
+        videoProgressContainer.easy.layout(Left(25), Right(25), Top(50), Height(8))
+        
+        segmentWidth = videoProgressContainer.frame.width / CGFloat(maxVideoSegments)
+        
+        deleteClipButton = CameraActionButton(frame: CGRect(x: 0, y: 80, width: 48, height: 48), title: "", icon: UIImage(named: "Action/delete"))
+        deleteClipButton.backgroundColor = .gray2
+        self.view.addSubview(deleteClipButton)
+        deleteClipButton.easy.layout(Right(50).to(recordButton), CenterY().to(recordButton), Width(48), Height(48))
+        deleteClipButton.isHidden = true
+        
+        nextButton = CameraActionButton(frame: CGRect(x: 0, y: 80, width: 48, height: 48), title: "", icon: UIImage(named: "Navigation/arrow-long-right"))
+        nextButton.backgroundColor = .electricBlue
+        self.view.addSubview(nextButton)
+        nextButton.easy.layout(Left(50).to(recordButton), CenterY().to(recordButton), Width(48), Height(48))
+        nextButton.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -274,17 +299,42 @@ class VideoViewController: CameraBase {
     }
     
     @objc func record() {
-        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        progress = 0.0
+        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        
+        galleryButton.isHidden = true
+        swapModeButton.isHidden = true
+        
+        deleteClipButton.isHidden = false
+        nextButton.isHidden = false
+        
+        let xPos = segmentWidth * CGFloat(videoProgressSegments.count)
+        
+        let segment = UIView(frame: CGRect(x: 0 + xPos, y: 0, width: 0, height: 8))
+        segment.backgroundColor = .pink
+        videoProgressContainer.addSubview(segment)
+        
+        if videoProgressSegments.count != 0 {
+            let separator = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 8))
+            separator.backgroundColor = .white
+            segment.addSubview(separator)
+        }
+        
+        videoProgressSegments.append(segment)
     }
     
     @objc func updateProgress() {
-        let maxDuration = CGFloat(5) // Max duration of the recordButton
+        progress = progress + (CGFloat(segmentWidth) * (CGFloat(maxVideoLength) / 1000.0))
+        print(progress)
+        let activeSegment = videoProgressSegments[videoProgressSegments.count - 1]
+        activeSegment.frame.size = CGSize(width: progress, height: 8)
         
-        progress = progress + (CGFloat(0.05) / maxDuration)
-        //recordButton.setProgress(progress)
-        
-        if progress >= 1 {
+        if progress >= segmentWidth {
             progressTimer.invalidate()
+            
+            if recordButton.isRecording && videoProgressSegments.count < maxVideoSegments {
+                record()
+            }
         }
     }
     
